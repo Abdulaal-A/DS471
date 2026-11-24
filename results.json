@@ -1,0 +1,122 @@
+{
+  "dataset": {
+    "samples": 569,
+    "original_features": 30,
+    "engineered_features": 2,
+    "missing": 0,
+    "duplicates": 0,
+    "benign": 357,
+    "malignant": 212
+  },
+  "split": {
+    "train": 398,
+    "validation": 85,
+    "test": 86,
+    "train_malignant": 148,
+    "validation_malignant": 32,
+    "test_malignant": 32
+  },
+  "feature_rank_train": {
+    "worst perimeter": 0.7811,
+    "worst concave points": 0.7794,
+    "worst radius": 0.7749,
+    "mean concave points": 0.7679,
+    "worst area": 0.737,
+    "mean perimeter": 0.7356,
+    "mean radius": 0.7228,
+    "mean area": 0.7034,
+    "mean concavity": 0.665,
+    "radius_worst_to_mean": 0.6423
+  },
+  "selected_features": [
+    "mean radius",
+    "mean perimeter",
+    "mean area",
+    "mean compactness",
+    "mean concavity",
+    "mean concave points",
+    "radius error",
+    "worst radius",
+    "worst perimeter",
+    "worst area",
+    "worst compactness",
+    "worst concavity",
+    "worst concave points",
+    "radius_worst_to_mean",
+    "area_worst_to_mean"
+  ],
+  "validation": [
+    {
+      "model": "Logistic Regression",
+      "val_recall": 0.96875,
+      "val_f1": 0.9841269841269841,
+      "val_auc": 0.9994103773584906,
+      "hyperparameters": "{'model__C': 1, 'model__class_weight': 'balanced'}",
+      "cv_recall": 0.9322448979591836
+    },
+    {
+      "model": "Random Forest",
+      "val_recall": 0.90625,
+      "val_f1": 0.9354838709677419,
+      "val_auc": 0.9905660377358491,
+      "hyperparameters": "{'model__max_depth': None, 'model__min_samples_leaf': 1, 'model__n_estimators': 200}",
+      "cv_recall": 0.939047619047619
+    },
+    {
+      "model": "Neural Network",
+      "val_recall": 0.9375,
+      "val_f1": 0.967741935483871,
+      "val_auc": 0.9988207547169812,
+      "hyperparameters": "hidden=(32, 16), alpha=0.01, best_epoch=111, batch=32, lr=.001, patience=25",
+      "cv_recall": null
+    }
+  ],
+  "neural_network": {
+    "config": "hidden=(32, 16);alpha=0.01",
+    "best_epoch": 111,
+    "lowest_val_loss": 0.04903040025328617,
+    "train_loss_at_selected_epoch": 0.04203628389224736,
+    "final_plot_train_loss": 0.033285137472252736,
+    "final_plot_val_loss": 0.052731612352346725,
+    "last_epoch_run": 136
+  },
+  "test": [
+    {
+      "Model": "Logistic Regression",
+      "Accuracy": 0.9883720930232558,
+      "Precision": 0.9696969696969697,
+      "Recall": 1.0,
+      "F1": 0.9846153846153847,
+      "ROC-AUC": 0.9988425925925927,
+      "TN": 53,
+      "FP": 1,
+      "FN": 0,
+      "TP": 32
+    },
+    {
+      "Model": "Random Forest",
+      "Accuracy": 0.9767441860465116,
+      "Precision": 1.0,
+      "Recall": 0.9375,
+      "F1": 0.967741935483871,
+      "ROC-AUC": 0.9976851851851852,
+      "TN": 54,
+      "FP": 0,
+      "FN": 2,
+      "TP": 30
+    },
+    {
+      "Model": "Neural Network",
+      "Accuracy": 0.9883720930232558,
+      "Precision": 1.0,
+      "Recall": 0.96875,
+      "F1": 0.9841269841269841,
+      "ROC-AUC": 1.0,
+      "TN": 54,
+      "FP": 0,
+      "FN": 1,
+      "TP": 31
+    }
+  ],
+  "best_by_priority": "Logistic Regression"
+}
